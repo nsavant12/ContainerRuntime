@@ -1,0 +1,75 @@
+{
+  "platform": "linux/arm64",
+  "checks": [
+    {
+      "image": "alpine",
+      "command": [
+        "/bin/sh",
+        "-c",
+        "id; hostname; echo hello"
+      ],
+      "exit_code": 0
+    },
+    {
+      "image": "nginx",
+      "command": [
+        "/bin/sh",
+        "-c",
+        "echo multi-layer-image-ok; nginx -v"
+      ],
+      "exit_code": 0,
+      "stdout": "multi-layer-image-ok",
+      "stderr": "nginx version: nginx/1.28.3"
+    }
+  ],
+  "images": [
+    {
+      "name": "alpine",
+      "source": "alpine:3.22",
+      "digest": "sha256:2c9d26f410d032d5b1525aa8a873e238b05b90c4ae8618743d4311f0cc827e37",
+      "layers": [
+        "03ba6f53ebfcc662cb046823a1858bd5029e4040d22dd34096868ddf7b5dd776"
+      ],
+      "env": [
+        "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      ],
+      "cmd": [
+        "/bin/sh"
+      ],
+      "workdir": "/"
+    },
+    {
+      "name": "nginx",
+      "source": "nginx:1.28-alpine",
+      "digest": "sha256:1be286f7dd7d6e6be04f46e8df36d0084b05aa3d7fd3c6ebda3e1eff4e5b665d",
+      "layers": [
+        "45f3ea5848e8a25ca27718b640a21ffd8c8745d342a24e1d4ddfc8c449b0a724",
+        "32a2bfcd9cdfe8e20042bbe45cf43278e875080c9e600454a5e7666a9b669d98",
+        "236d640e4b80a36849092615b008fe0819de0598ac0d49e89fc312353de3f4e8",
+        "de0fdbba2cd9ba225c5d835052c81e87bcefe30c742ca9d545a51f8f74f44c3f",
+        "a2080a39ce08ced75466bb5c67c1358c11685d00e629f037b64d03363ccfb8d4",
+        "1c6d0cd2852aa06a80066ede5021f8fcf80fb2641f297c37de659ff6156d0af5",
+        "f832e396d1709b82339753a5c53b897e6fd1fc0bcd7b79bb1751a5e73e5fa13b",
+        "fb2ac267ba167215a1bd722fdc5caa14ea1336a32d36976a3baa71aadd69056d"
+      ],
+      "env": [
+        "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+        "NGINX_VERSION=1.28.3",
+        "PKG_RELEASE=1",
+        "DYNPKG_RELEASE=1",
+        "NJS_VERSION=0.9.6",
+        "NJS_RELEASE=1",
+        "ACME_VERSION=0.3.1"
+      ],
+      "entrypoint": [
+        "/docker-entrypoint.sh"
+      ],
+      "cmd": [
+        "nginx",
+        "-g",
+        "daemon off;"
+      ],
+      "workdir": "/"
+    }
+  ]
+}

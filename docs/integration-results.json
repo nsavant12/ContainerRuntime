@@ -1,0 +1,112 @@
+{
+  "all_passed": true,
+  "failure": null,
+  "binary_sha256": "4e20b1d64ce75afa93c50339429f25d758756be16699b2b6a098c4ebe01e2641",
+  "probe_sha256": "bbc01e5f3b2fe73eba530cce35b1e8c1db6755690ec91ef37fdbb6c51dbb147d",
+  "kernel": "7.0.0-28-generic",
+  "architecture": "aarch64",
+  "test_directory": "/var/tmp/isolate-integration-zco3ovsw",
+  "passed": 20,
+  "tests": [
+    {
+      "test": "PID/NET/MOUNT/UTS/IPC/cgroup namespaces and privilege restrictions",
+      "passed": true,
+      "seconds": 0.033
+    },
+    {
+      "test": "UID 0 still has no capabilities and cannot mount/unshare/mknod",
+      "passed": true,
+      "seconds": 0.01
+    },
+    {
+      "test": "workload exit status preserved",
+      "passed": true,
+      "seconds": 0.009
+    },
+    {
+      "test": "OverlayFS writes do not change base image or other instances",
+      "passed": true,
+      "seconds": 0.017
+    },
+    {
+      "test": "imported directory ownership permits designated non-root writes",
+      "passed": true,
+      "seconds": 0.009
+    },
+    {
+      "test": "CPU quota measured under sustained CPU load",
+      "passed": true,
+      "seconds": 3.022
+    },
+    {
+      "test": "memory hard limit triggers a contained OOM kill",
+      "passed": true,
+      "seconds": 0.033
+    },
+    {
+      "test": "pids.max bounds process/thread creation",
+      "passed": true,
+      "seconds": 0.012
+    },
+    {
+      "test": "PID 1 reaps orphaned children",
+      "passed": true,
+      "seconds": 0.326
+    },
+    {
+      "test": "detached readiness, logs and graceful signal forwarding",
+      "passed": true,
+      "seconds": 0.029
+    },
+    {
+      "test": "stop escalates when workload ignores SIGTERM",
+      "passed": true,
+      "seconds": 0.265
+    },
+    {
+      "test": "failed initialization cleans cgroup and reports failure",
+      "passed": true,
+      "seconds": 0.028
+    },
+    {
+      "test": "active removal and duplicate names rejected; stopped removal succeeds",
+      "passed": true,
+      "seconds": 0.054
+    },
+    {
+      "test": "malicious archive traversal and symlink escapes rejected",
+      "passed": true,
+      "seconds": 0.008
+    },
+    {
+      "test": "image-controlled symlink mountpoints rejected before privilege drop",
+      "passed": true,
+      "seconds": 0.017
+    },
+    {
+      "test": "OCI whiteout layer mounts over a shared base",
+      "passed": true,
+      "seconds": 0.015
+    },
+    {
+      "test": "OCI opaque directories hide lower children and preserve upper entries",
+      "passed": true,
+      "seconds": 0.019
+    },
+    {
+      "test": "supervisor death kills namespace workloads; rm recovers stale state",
+      "passed": true,
+      "seconds": 0.009
+    },
+    {
+      "test": "independent stores can use the same container name concurrently",
+      "passed": true,
+      "seconds": 0.064
+    },
+    {
+      "test": "all containers clean up without host mount or cgroup leaks",
+      "passed": true,
+      "seconds": 0.023
+    }
+  ]
+}
